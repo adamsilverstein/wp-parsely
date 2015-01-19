@@ -600,7 +600,8 @@ class Parsely {
             $category = 'Uncategorized';
         }
 
-        return $this->get_clean_parsely_page_value($category);
+        $category = $this->get_clean_parsely_page_value( $category );
+        return apply_filter( 'parsely_post_category', $category, $postObj, $parselyOptions );
     }
 
     /**
